@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations */
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes colorCycle {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(8deg);
+  }
+  40% {
+    transform: rotate(-8deg);
+  }
+  60% {
+    transform: rotate(4deg);
+  }
+  80% {
+    transform: rotate(-4deg);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-500 text-white font-bold py-3 px-6 rounded-xl shadow-kid hover:bg-primary-600 active:shadow-pressed active:translate-y-1 transition-all duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-500 text-white font-bold py-3 px-6 rounded-xl shadow-kid hover:bg-secondary-600 active:shadow-pressed active:translate-y-1 transition-all duration-200;
+  }
+  
+  .btn-accent {
+    @apply bg-accent-500 text-white font-bold py-3 px-6 rounded-xl shadow-kid hover:bg-accent-600 active:shadow-pressed active:translate-y-1 transition-all duration-200;
+  }
+  
+  .card-kid {
+    @apply bg-white rounded-2xl shadow-kid p-6 transition-all duration-300 hover:shadow-xl;
+  }
+
+  .input-kid {
+    @apply bg-white border-2 border-primary-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
+  }
+
+  .appear-animation {
+    animation: appear 0.6s ease forwards;
+  }
+
+  .pop-in-animation {
+    animation: popIn 0.5s ease forwards;
+  }
+
+  .bounce-animation {
+    animation: bounce 2s infinite ease-in-out;
+  }
+
+  .wave-animation {
+    animation: wave 3s infinite ease-in-out;
+  }
+
+  .color-cycle {
+    animation: colorCycle 10s infinite linear;
+  }
+
+  .shake-animation {
+    animation: shake 0.8s ease-in-out;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
